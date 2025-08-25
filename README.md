@@ -1,14 +1,18 @@
 # HomeworkE
 
-Assignment Objectives
+# Assignment Objectives
+
 Practice using the fork() function to create multiple processes
 Practice implementing a program in C that consists of several source code files
-Assignment Summary
+
+# Assignment Summary
+
 In this assignment, you will finish the coding of a partially-completed C program that uses the fork() and wait() functions to create child processes and then wait for each of them to terminate. The program finds the largest integer value in an array of integers. Provided on the command line are the number of children processes to be used to search the array, and the total number of entries in the array. In the Software Requirements section below is an explanation of the two functions that you will implement for this program.
 
 The sample-runs.txt file contains a series of sample runs of the program. The output from your part of the program should match the format and style of the (Child process#) lines shown in these sample runs. The rest of the lines are printed by the parent process using code in the main module. Note that the actual maximum values found by the children processes in your program will vary depending on the contents of the integer array.
 
-Software Requirements
+# Software Requirements
+
 You shall implement the following two functions:
 
 void searchIntegerList(int list[], int nbrOfListEntries, int childrenCount)

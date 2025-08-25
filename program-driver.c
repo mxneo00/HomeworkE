@@ -93,6 +93,10 @@ if (argc != 3)
 
 childrenCount = atoi(argv[1]);
 
+if (childrenCount > entryCount){
+   return FALSE;
+}
+
 if ( (childrenCount < MIN_CHILDREN) || (childrenCount > MAX_CHILDREN) )
    {
    return FALSE;

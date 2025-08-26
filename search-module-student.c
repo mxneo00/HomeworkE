@@ -11,7 +11,26 @@ static int findMaxInteger(int list[], int startingIndex, int numbrOfEntries);
 // ################################################################
 void searchIntegerList(int list[], int nbrOfListEntries, int childrenCount)
 {
+    
+    int searchSize = nbrOfListEntries / childrenCount;
+    int startIndex = 0;
+
     for (int i = 0; i < childrenCount; i++){
+        // Give each child entries
+        int childrenEntries = searchSize;
+
+        // Create children
+        pid_t pid = fork();
+        if (pid < 0){
+            perror("fork error");
+            exit(1);
+        } else if (pid == 0){
+            int maxInt = findMaxInteger(list, startIndex, childrenEntries);
+            printf("\n(Child process #%ld) Searching indexes %d through %d ...\n", (long)getpid(), startIndex, startIndex + childrenEntries - 1);
+            exit(maxInt);
+        } else {
+            startIndex += childrenEntries;
+        }
 
     }
     
